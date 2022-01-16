@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  devops-upskill:
+    image: ivailozd/devops-upskill-0.0.3-snapshot:develop
+    expose:
+      - 8080
+
+  devops-upskill-test:
+    image: ivailozd/devops-upskill-test-latest
+    command: dockerize
+      -wait tcp://devops-upskill:8080 -timeout 10s
+      bash -c "sh allTests.sh"
+    depends_on:
+      - devops-upskill
