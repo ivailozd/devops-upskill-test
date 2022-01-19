@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   devops-upskill:
-    image: ivailozd/devops-upskill-0.0.3-snapshot:develop
+    image: ivailozd/devops-upskill:develop
     expose:
       - 8080
 
